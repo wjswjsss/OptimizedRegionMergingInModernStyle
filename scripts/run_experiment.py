@@ -7,7 +7,7 @@ import open3d as o3d
 
 # --- Configuration ---
 # PROJECT_ROOT is the directory where this script is located.
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 # --- USER ACTION REQUIRED ---
 # Set this path to the root directory of your other project containing the Semantic3D data.
@@ -136,7 +136,7 @@ def main(args):
         
         preprocess_cmd = [
             "python", os.path.join(SCRIPTS_DIR, "preprocess.py"),
-            raw_pcd_path, downsampled_pcd_path, "--voxel_size", "0.1"
+            raw_pcd_path, downsampled_pcd_path, "--voxel_size", "0.4"
         ]
         run_command(preprocess_cmd)
         
